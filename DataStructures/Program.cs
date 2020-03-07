@@ -14,6 +14,14 @@ namespace DataStructures
             dynamicArray.print();
             dynamicArray.delete(4);
             dynamicArray.print();
+
+            Console.WriteLine("LinkedList");
+            var linkedList = new LinkedList(5);
+            linkedList.Add(2);
+            linkedList.Add(4);
+            linkedList.Delete(2);
+            linkedList.print();
+
         }
     }
 }

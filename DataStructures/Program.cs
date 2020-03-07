@@ -22,6 +22,13 @@ namespace DataStructures
             linkedList.Delete(2);
             linkedList.print();
 
+            Console.WriteLine("Stack ");
+            var stack = new Stack(5);
+            stack.pushValue(2);
+            stack.pushValue(4);
+            stack.popValue();
+            stack.printValues();
+
         }
     }
 }

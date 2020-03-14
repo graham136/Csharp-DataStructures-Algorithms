@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DataStructures.DataTypes
 {
-    
+
     public class Stack
     {
         Node head;
@@ -27,11 +25,11 @@ namespace DataStructures.DataTypes
         public int popValue()
         {
             var current = head;
-            if (head == null) 
+            if (head == null)
             {
                 return -1;
             }
-            var value = head.data; 
+            var value = head.data;
             head = head.next;
             return value;
         }
@@ -39,15 +37,16 @@ namespace DataStructures.DataTypes
         public void printValues()
         {
             var current = head;
-            if(current == null)
+            if (current == null)
             {
                 return;
             }
-            while(current != null)
+            while (current != null)
             {
-                Console.Write(" {0} ",current.data);
+                Console.Write(" {0} ", current.data);
                 current = current.next;
             }
+            Console.WriteLine(0);
         }
     }
 }

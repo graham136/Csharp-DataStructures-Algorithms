@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DataStructures.DataTypes
 {
@@ -22,7 +20,7 @@ namespace DataStructures.DataTypes
         public void Add(int newValue)
         {
             Console.WriteLine("Adding value {0} at {1}", newValue, current);
-            if((current+1)<(size-1))
+            if ((current + 1) < (size - 1))
             {
                 values[current] = newValue;
                 current++;
@@ -31,12 +29,12 @@ namespace DataStructures.DataTypes
             {
                 int[] newValues = new int[size * 2];
                 size = size * 2;
-                for(int i = 0; i < current; i++)
+                for (int i = 0; i < current; i++)
                 {
                     newValues[i] = values[i];
                 }
                 newValues[current] = newValue;
-                values = (int[]) newValues.Clone();
+                values = (int[])newValues.Clone();
                 current++;
             }
         }
@@ -44,9 +42,9 @@ namespace DataStructures.DataTypes
         public void delete(int newValue)
         {
             int indexValue = -1;
-            for(int i =0; i<current; i++)
+            for (int i = 0; i < current; i++)
             {
-                if(newValue == values[i])
+                if (newValue == values[i])
                 {
                     indexValue = i;
                 }
@@ -55,7 +53,7 @@ namespace DataStructures.DataTypes
             if (indexValue > -1)
             {
                 Console.WriteLine("Deleting value {0} at {1}", newValue, indexValue);
-                for(int i=indexValue; i < current-1; i++)
+                for (int i = indexValue; i < current - 1; i++)
                 {
                     values[i] = values[i + 1];
                 }

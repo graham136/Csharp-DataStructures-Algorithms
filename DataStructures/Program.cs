@@ -29,6 +29,12 @@ namespace DataStructures
             stack.popValue();
             stack.printValues();
 
+            Console.WriteLine("Queue");
+            var queue = new Queue(5);
+            queue.Enqueue(2);
+            queue.Enqueue(4);
+            queue.Dequeue();
+            queue.Print();
         }
     }
 }

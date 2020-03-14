@@ -2,60 +2,48 @@
 
 namespace DataStructures.DataTypes
 {
-    public class LinkedList
+    public class Queue
     {
         public Node head;
         public Node tail;
 
-        public LinkedList(int value)
+        public Queue(int value)
         {
             head = new Node(value);
             head.next = null;
             tail = head;
         }
 
-        public Node Add(int value)
+        public Node Enqueue(int value)
         {
             var current = new Node(value);
-            current.next = null;
-            tail.next = current;
-            tail = current;
+            current.next = head;
+            head = current;
             return current;
         }
 
-        public Node Delete(int value)
+        public Node Dequeue()
         {
             var current = head;
-            if (current.data == value)
+
+            if (current == tail)
             {
-                head = head.next;
+                head = null;
+                tail = null;
                 return current;
             }
 
-            while (current.next != null && current.next.data != value)
+            while (current.next != tail)
             {
                 current = current.next;
             }
 
-            if (current.next.data == value)
-            {
-                if (current.next == tail)
-                {
-                    tail = current;
-                    tail.next = null;
-                    return current.next;
-                }
-                var found = current.next;
-                current.next = current.next.next;
-                return found;
-            }
-            else
-            {
-                return null;
-            }
+            tail = current;
+            tail.next = null;
+            return current.next;
         }
 
-        public void print()
+        public void Print()
         {
             var current = head;
             if (current != null)
@@ -72,5 +60,6 @@ namespace DataStructures.DataTypes
             Console.WriteLine();
 
         }
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DataStructures.DataTypes;
+using DataStructures.Sorting;
 using System;
 
 namespace DataStructures
@@ -35,6 +36,18 @@ namespace DataStructures
             queue.Enqueue(4);
             queue.Dequeue();
             queue.Print();
+
+            //MergeSorted array see below
+            Console.WriteLine("Merge Sorted Array ");
+            int[] a = new int[] { 5, 3, 2, 7, 8, 10 };
+            Sort.MergeSort(a, 0, a.Length - 1);
+            Sort.PrintArray(a);
+
+            //QuickSorted array see below
+            Console.WriteLine("Quick Sorted Array ");
+            a = new int[] { 5, 3, 2, 7, 8, 10 };
+            Sort.QuickSort(a, 0, a.Length - 1);
+            Sort.PrintArray(a);
         }
     }
 }
